@@ -70,7 +70,6 @@ Things you may want to cover:
 ## Association
 - has_many :member_messages
 
-
 * Database initialization
 
 * How to run the test suite
