@@ -22,7 +22,7 @@ Things you may want to cover:
 |password|integer|null: false|
 
 ## Association
-- has_many :group
+- belongs_to :group
 - has_many :message
 
 ## message table
@@ -42,15 +42,34 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
-|use_id|integer|null: false|
+|group_name|string|null: false, index: true|
+|use_id|integer|null: false, foreign_key: true|
 
 ## Association
-- has_many :users
+- belongs_to :user
 - has_many :message
+- has_many :member_messages
 
+## member_message table
 
-|
+|Column|Type|Options|
+|------|----|-------|
+|member_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+## Association
+- belongs_to :group
+- belongs_to :chat_member
+
+## chat_member table
+
+|Column|Type|Options|
+|------|----|-------|
+|member_name|string|null: false,index: true|
+
+## Association
+- has_many :member_messages
+
 * Database initialization
 
 * How to run the test suite
