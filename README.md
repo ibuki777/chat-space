@@ -17,58 +17,47 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_name|string|null: false, index: true|
-|email|integer|null: false|
-|password|integer|null: false|
+|name|string|null: false, index: true|
 
 ## Association
-- belongs_to :group
-- has_many :message
+- has_many :groups,through: :group_users
+- has_many :messages
+- has_many :groups_users
 
-## message table
+## messages table
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text| |
 |image|string| |
-|user_id|integer|null: false,foreign_key: true|
-|group_id|integer|foreign_key: true|
+|user_id|references|null: false,foreign_key: true|
+|group_id|references|null: false,foreign_key: true|
 
 ## Association
 - belongs_to :user
 - belongs_to :group
 
-## group table
+## groups table
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, index: true|
-|use_id|integer|null: false, foreign_key: true|
+|name|string|null: false, index: true|
+
+## Association
+- has_many :user,through: :group_users
+- has_many :messagess
+- has_many :groups_users
+
+## groups_users table
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false,foreign_key: true|
+|group_id|references|null: false,foreign_key: true|
 
 ## Association
 - belongs_to :user
-- has_many :message
-- has_many :member_messages
-
-## member_message table
-
-|Column|Type|Options|
-|------|----|-------|
-|member_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-## Association
 - belongs_to :group
-- belongs_to :chat_member
-
-## chat_member table
-
-|Column|Type|Options|
-|------|----|-------|
-|member_name|string|null: false,index: true|
-
-## Association
-- has_many :member_messages
 
 * Database initialization
 
