@@ -4,17 +4,15 @@
       %h3.side__user-items__name
         =current_user.name
       .side__user-items__icons
-        = link_to "#", class: "side__user-items__icon" do
+        = link_to new_group_path, class: "side__user-items__icon" do
           = fa_icon 'edit', class: 'side__user-items__edit'
         = link_to edit_user_path(current_user) do
           = fa_icon 'cog', class: 'side__user-items__cog'
   .side__group
-    %ul.side__group__box
-      %li.side__group__box__name tech::camp
-      %li.side__group__box__chat まだメッセージはありません
-    %ul.side__group__box
-      %li.side__group__box__name tech::camp
-      %li.side__group__box__chat まだメッセージはありません
-    %ul.side__group__box
-      %li.side__group__box__name tech::camp
-      %li.side__group__box__chat まだメッセージはありません
+    - current_user.groups.each do |group|
+      .side__group__box
+        = link_to '#' do
+          .side__group__box__name 
+            = group.name
+          .side__group__box__chat 
+            メッセージはまだありません
