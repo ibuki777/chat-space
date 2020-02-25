@@ -5,22 +5,17 @@
       %li.main-info__group__member member : ibuki
     = link_to "#", class: "main-info-edit" do
       Edit
-  .main-list
-    .main-list__chat
-      .main-list__chat__name
-        ibuki
-      .main-list__chat__date
-        2020/02/21(fri)19:34:28
-    .main-list__text
-      GOOD MORNING
- 
-  %form.main__form
-    .main__form__text
-      
-      %input.main__form__text__message{:placeholder => "type a message", :class => "main__form__text__message-type", :type => "text",}/
-      %label{class: "main__form__text__picture"}
-        %i.fa.fa-image, 
-        %input{type: "file"}
-    .main__form__send
-      %input.main__form__send__btn{:type => "submit", :name => "commit", :value => "Send"}/
 
+  .main-list
+    = render @messages
+    
+  .main__form
+    = form_for [@group, @message] do |f|
+      .new_message__box
+        = f.text_field :content, class: 'new_message__box__message',placeholder: "type a message"
+        = f.label :image, class: "new_message__box__picture" do
+          = fa_icon 'image'
+          = f.file_field :image
+      = f.submit 'Send', class:'main__form__btn'
+
+  
