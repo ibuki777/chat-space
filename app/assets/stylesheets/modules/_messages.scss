@@ -52,7 +52,10 @@
     width: 100%;
     &__box {
       font-weight: bold;
-      color: #ffffff;
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
       &__name{
         font-size: 15px;
         padding: 20px 20px 5px;

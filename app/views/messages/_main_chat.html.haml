@@ -6,29 +6,17 @@
     = link_to "#", class: "main-info-edit" do
       Edit
   .main-list
-    %ul.main-list__chat
-      %li.main-list__chat__name
+    .main-list__chat
+      .main-list__chat__name
         ibuki
-      %li.main-list__chat__date
+      .main-list__chat__date
         2020/02/21(fri)19:34:28
     .main-list__text
       GOOD MORNING
-    %ul.main-list__chat
-      %li.main-list__chat__name
-        ibuki
-      %li.main-list__chat__date
-        2020/02/21(fri)19:34:28
-    .main-list__text
-      GOOD MORNING
-    %ul.main-list__chat
-      %li.main-list__chat__name
-        ibuki
-      %li.main-list__chat__date
-        2020/02/21(fri)19:34:28
-    .main-list__text
-      GOOD MORNING
+ 
   %form.main__form
     .main__form__text
+      
       %input.main__form__text__message{:placeholder => "type a message", :class => "main__form__text__message-type", :type => "text",}/
       %label{class: "main__form__text__picture"}
         %i.fa.fa-image, 
