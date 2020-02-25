@@ -53,11 +53,16 @@
     &__box {
       font-weight: bold;
       color: #ffffff;
+      a {
+        text-decoration: none;
+      }
       &__name{
+        color: #ffffff;
         font-size: 15px;
         padding: 20px 20px 5px;
       }
       &__chat{
+        color: #ffffff;
         font-size: 11px;
         padding: 0px 20px 40px;
       }
