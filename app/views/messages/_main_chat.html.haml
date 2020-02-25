@@ -1,8 +1,12 @@
 .main
   .main-info
-    %ul.main-info__group
-      %li.main-info__group__name test
-      %li.main-info__group__member member : ibuki
+    .main-info__group
+      .main-info__group__name
+        = @group.name
+      .main-info__group__member
+        %ul
+          - @group.users.each do |user|
+            = user.name
     = link_to "#", class: "main-info-edit" do
       Edit
 
