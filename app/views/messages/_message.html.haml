@@ -1,4 +1,4 @@
-.main-list__chat
+.main-list__chat{data: {id: "#{message.id}"}}
   .main-list__chat__name
     = message.user.name
   .main-list__chat__date
@@ -7,3 +7,6 @@
   - if message.content.present?
     = message.content
   = image_tag message.image.url, class: 'main-list__text__image' if message.image.present?
+
+
+
