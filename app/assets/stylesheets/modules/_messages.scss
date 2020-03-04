@@ -87,9 +87,13 @@
         font-size: 20px;
         margin-bottom: 15px;
       }
-      &__member{
+      &-fix{
+        display: flex;
         color: #999999;
         font-size: 12px;
+        &__member{
+          
+        }
       }
     }
       &-edit{
