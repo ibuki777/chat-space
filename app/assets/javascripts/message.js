@@ -78,7 +78,7 @@ $(function() {
       }
     })
     .fail(function() {
-      alert('自動更新ができてまへん');
+      alert('自動更新ができません');
     });
   };
 

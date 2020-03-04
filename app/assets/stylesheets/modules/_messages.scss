@@ -87,12 +87,9 @@
         font-size: 20px;
         margin-bottom: 15px;
       }
-      &-fix{
+      &__member{
         color: #999999;
         font-size: 12px;
-        display: flex;
-        &__member{
-        }
       }
     }
       &-edit{
@@ -129,6 +126,9 @@
       color: #434a54;
       font-size: 14px;
       padding-bottom: 46px;
+      &__image{
+        display: block;
+      }
     }
   }
   &__form{
